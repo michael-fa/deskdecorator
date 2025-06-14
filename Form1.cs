@@ -106,7 +106,7 @@ namespace deskdecorator
             combox_EditItemSelector.SelectedIndex = 0;
             combox_EditItemSelector.SelectedItemChanged += ComboBox_SelectedItemChanged;
 
-            // Menüeinträge
+            // MenÃ¼eintrÃ¤ge
             contextMenu.Items.Add(new ToolStripMenuItem(Language.Get("systray_crnwlbl"), null, Click_Add_Label));
             //contextMenu.Items.Add(new ToolStripMenuItem("Add -> Image", null, Click_Add_Image));
             contextMenu.Items.Add(new ToolStripSeparator());
@@ -146,25 +146,25 @@ namespace deskdecorator
                         return;
                     }
                     // Set up the Widget submenu properties
-                    widgetKey.SetValue("MUIVerb", "Widget");           // Display name for submenu:contentReference[oaicite:16]{index=16}
-                    widgetKey.SetValue("SubCommands", "");             // Indicates this is a cascaded menu:contentReference[oaicite:17]{index=17}
-                                                                       // (Optional) widgetKey.SetValue("Icon", $"\"{Application.ExecutablePath}\",0"); // use app icon
+                    widgetKey.SetValue("MUIVerb", "Widget");           
+                    widgetKey.SetValue("SubCommands", "");            
+                                                                
 
                     // Ensure the Shell subkey exists for submenu items
                     using (RegistryKey shellKey = widgetKey.CreateSubKey("Shell"))
                     {
-                        // Current application path (quoted) for commands
+            
                         string exePath = Application.ExecutablePath;
                         string labelCmd = $"\"{exePath}\" --add-label";
                         string imageCmd = $"\"{exePath}\" --add-image";
 
-                        // **Label** submenu item
+               
                         using (RegistryKey labelKey = shellKey.CreateSubKey("Label"))
                         {
-                            labelKey.SetValue("", "Label");  // default value is item name:contentReference[oaicite:18]{index=18}
+                            labelKey.SetValue("", "Label"); 
                             using (RegistryKey cmdKey = labelKey.CreateSubKey("command"))
                             {
-                                cmdKey.SetValue("", labelCmd);  // command to execute (exe path + argument)
+                                cmdKey.SetValue("", labelCmd);
                             }
                         }
                         /*// **Image** submenu item
