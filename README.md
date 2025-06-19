@@ -3,7 +3,7 @@ Put the executable file anywhere you want Note that you need to run this as admi
 Everything else will be loaded / initialised automatically.
 
 ⚠️ Note that putting (installing) the program (and it's folders) / extracting it somewhere in a Windows-System Related folder like _``Program Files``_, and _``Program Files (x86)``_
-it will cause the Administrator Safety-thingy prompt from Windows to pop up before the program is started. Simply installing it anywhere else, like in _``C:\Users\YourName\``_ will work completely fine.
+it will cause the Administrator Safety-thingy prompt from Windows to pop up before the program is started, meaning in some cases (autostart) to a failed program starrt. Simply installing it anywhere else, like in _``C:\Users\YourName\``_ will work completely fine.
 I'll see what I can do for the next update, to fix this completely. 
  
 ---
